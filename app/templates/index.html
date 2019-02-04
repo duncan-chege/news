@@ -13,10 +13,11 @@
 
             <!-- Business section  -->
             <h3> Business News </h3>
-             <ul>
-                {% for news_source in sources %}
-                    <li>{{ news_source.name}}</li>
+             <ol>
+                {% for news_sources in sources %}
+                    <li>{{ news_sources.name}}</li>
+                    <p>{{ news_sources.description}}<br>Find us on: <a href="{{news_sources.url}}" target="_blank">{{news_sources.url}}</a> </p>
                 {% endfor %}
-            </ul>
+            </ol>
     </body>
 </html>

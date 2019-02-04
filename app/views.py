@@ -9,7 +9,8 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    news_sources = get_sources('sources')
+    news_sources = get_sources('mysources')
+    print(news_sources)
    
     title= "Get the latest news"
     return render_template('index.html', title = title, sources = news_sources)
