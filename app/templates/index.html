@@ -5,6 +5,7 @@
 
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 {% endblock %}
 
@@ -20,8 +21,8 @@
 
             {% for news_sources in sources %}
             
-            <div class="col-sm-4 cardi">
-                <p><a href="/article/{{news_sources.id}}" target="_blank">{{ news_sources.name}}</a></p>
+            <div class="col-sm-4 cardi w3-sand">
+                <p class="text"><a href="/article/{{news_sources.id}}" target="_blank">{{ news_sources.name}}</a></p>
                   <!-- Click to view the articles -->
               
             </div>
