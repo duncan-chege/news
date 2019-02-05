@@ -5,7 +5,7 @@
 {% for indexarticle in myarticle %}
 
     <p> {{indexarticle.title}} </p>
-    <p> {{indexarticle.content | truncate(50) }} </p>
+    <p> {{indexarticle.content}} </p>
     <img src="{{indexarticle.urlToImage}}" alt="article image">
 
 {% endfor %}
