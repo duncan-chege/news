@@ -54,27 +54,37 @@ def process_results(sources_list):
 
     return sources_results
 
-def get_article(id):
-    get_article_details_url = base2_url.format(api_key)
+def get_article(articles):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = base2_url.format(api_key)
 
-    with urllib.request.urlopen(get_article_details_url) as url:
-        article_details_data = url.read()
-        article_details_response = json.loads(article_details_data)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
 
-        article_object = None
+        articles_results = None
 
-        if article_details_response:
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            sources_results = process_results(sources_results_list)
 
-            id = article_details_response.get('id')
-            name = article_details_response.get('name')
-            title = article_details_response.get('title')
-            urlToImage = article_details_response.get('urlToImage')
-            content = article_details_response.get('content')
-            publishedAt = article_details_response.get('publishedAt')
+    return articles_results
 
-            article_object = Articles(id,name,title,urlToImage,content,publishedAt)
 
-    return article_object
+    #     if article_details_response:
+
+    #         id = article_details_response.get('id')
+    #         name = article_details_response.get('name')
+    #         title = article_details_response.get('title')
+    #         urlToImage = article_details_response.get('urlToImage')
+    #         content = article_details_response.get('content')
+    #         publishedAt = article_details_response.get('publishedAt')
+
+    #         article_object = Articles(id,name,title,urlToImage,content,publishedAt)
+
+    # return article_object
 
 
 
