@@ -2,7 +2,9 @@
 
 {% block content %}
 
-<p> {{ article.title }} </p>
-<p> {{ article.content }}</p>
+{% for indexarticle in myarticle %}
+
+    <p> {{indexarticle.title}} </p>
+    <p> {{indexarticle.content | truncate(50) }} </p>
 
 {% endblock %}

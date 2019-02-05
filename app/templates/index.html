@@ -8,7 +8,7 @@
         {% for news_sources in sources %}
             <li><a href="{{news_sources.url}}" target="_blank">{{ news_sources.name}}</a></li>
 
-            <p>{{ news_sources.description}}<br>Click: <a href="/article/{{article.id}}" target="_blank">here</a> to read more</p>
+            <p>{{ news_sources.description}}<br>Click: <a href="/article/{{article.id}}" >here</a> to read more</p>
 
             <!-- Click to view the articles -->
         {% endfor %}

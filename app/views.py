@@ -19,11 +19,11 @@ def index():
 def article(article_id):
 
     '''
-    View movie page function that returns the movie details page and its data
+    View article page function that returns the article details page and its data
     '''
     article = get_article(article_id)
     title = f'{article_id}'
 
-    return render_template('article.html',title = title, article = article)
+    return render_template('article.html',title = title, myarticle = article)
 
 
