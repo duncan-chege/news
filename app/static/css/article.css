@@ -1,0 +1,19 @@
+/* .articleimg{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 2em;
+} */
+.imagesize{
+    width: 70%;
+    height: 50%;
+}
+.artitle{
+    text-align: center;
+}
+.move{
+    margin-left: 100px;
+}
+.movecard{
+    margin: 30px;
+}

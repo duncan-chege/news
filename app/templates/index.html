@@ -1,17 +1,33 @@
 {% extends 'base.html'%}
 
-    {% block content %}
+<!-- Styles block -->
+{% block styles %}
+
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+{% endblock %}
+
+<!-- Block content -->
+{% block content %}
 
     <!-- Business section  -->
-    <h3> Business News </h3>
-        <ol>
-        {% for news_sources in sources %}
-            <li><a href="{{news_sources.url}}" target="_blank">{{ news_sources.name}}</a></li>
+    <div class="container space">
+        <div class="row">
+            <div class="col-md-12">
+            <h3 class="title"> News Sources </h3>
+            </div>
 
-            <p>{{ news_sources.description}}<br>Click: <a href="/article/{{news_sources.id}}" >here</a> to read more</p>
+            {% for news_sources in sources %}
+            
+            <div class="col-sm-4 cardi">
+                <p><a href="/article/{{news_sources.id}}" target="_blank">{{ news_sources.name}}</a></p>
+                  <!-- Click to view the articles -->
+              
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
 
-            <!-- Click to view the articles -->
-        {% endfor %}
-    </ol>
-
-{% endblock%}
+{% endblock %}
