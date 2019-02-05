@@ -76,7 +76,7 @@ def get_article(article_id):
 def process_articles(articles_list):
 
     '''
-    Function  that processes the articles result and transform them to a list of articles
+    This is a function that processes the articles result and transform them to a list of articles
 
     Args:
         articles_list: A list of dictionaries that contain articles
