@@ -6,8 +6,11 @@
     <h3> Business News </h3>
         <ol>
         {% for news_sources in sources %}
-            <li>{{ news_sources.name}}</li>
-            <p>{{ news_sources.description}}<br>Find us on: <a href="{{news_sources.url}}" target="_blank">{{news_sources.url}}</a> </p>
+            <li><a href="{{news_sources.url}}" target="_blank">{{ news_sources.name}}</a></li>
+
+            <p>{{ news_sources.description}}<br>Click: <a href="/article/{{article.id}}" target="_blank">here</a> to read more</p>
+
+            <!-- Click to view the articles -->
         {% endfor %}
     </ol>
 
