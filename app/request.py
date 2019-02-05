@@ -89,13 +89,14 @@ def process_articles(articles_list):
         id = articles_item.get('id')
         name = articles_item.get('name')
         title = articles_item.get('title')
-        urlToImage = articles_item.get('urlToImage')
+        image = articles_item.get('urlToImage')
         content = articles_item.get('content')
         publishedAt = articles_item.get('publishedAt')
 
 
-    article_object= Articles(id, name, title, urlToImage, content, publishedAt)
-    articles_results.append(article_object)
+        if image:
+            article_object= Articles(id, name, title, image, content, publishedAt)
+            articles_results.append(article_object)
 
     return articles_results
 
