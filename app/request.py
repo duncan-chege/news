@@ -98,19 +98,23 @@ def get_article(articles):
 
     return articles_results
 
+    def get_article(id):
+        get_article_details_url = base2_url.format(api_key)
 
-    #     if article_details_response:
+        with urllib.request.urlopen(get_article_details_url) as url:
+            article_details_data = url.read()
+            article_details_response = json.loads(article_details_data)
 
-    #         id = article_details_response.get('id')
-    #         name = article_details_response.get('name')
-    #         title = article_details_response.get('title')
-    #         urlToImage = article_details_response.get('urlToImage')
-    #         content = article_details_response.get('content')
-    #         publishedAt = article_details_response.get('publishedAt')
+            article_object = None
 
-    #         article_object = Articles(id,name,title,urlToImage,content,publishedAt)
+            if article_details_response:
+                id = article_details_response.get('id')
+                name = article_details_response.get('name')
+                title = article_details_response.get('title')
+                urlToImage = article_details_response.get('urlToImage')
+                content = article_details_response.get('content')
+                publishedAt = article_details_response.get('publishedAt')
 
-    # return article_object
+                article_object = Articles(id,name,title,urlToImage,content,publishedAt)
 
-
-
+    return article_object
