@@ -68,12 +68,13 @@ def get_article(articles):
 
         if get_articles_response['articles']:
             articles_results_list = get_articles_response['articles']
-            articles_results = process_results(articles_results_list)
+            articles_results = process_articles(articles_results_list)
 
     return articles_results
 
 
-    def process_results(articles_list):
+def process_articles(articles_list):
+
     '''
     Function  that processes the articles result and transform them to a list of articles
 
@@ -82,7 +83,7 @@ def get_article(articles):
 
     Returns :
         articles_results: A list of article objects
-    '''
+    ''' 
     articles_results = []
     for articles_item in articles_list:
         id = articles_item.get('id')
@@ -93,28 +94,28 @@ def get_article(articles):
         publishedAt = articles_item.get('publishedAt')
 
 
-        article_object= Articles(id, name, title, urlToImage, content, publishedAt)
-        articles_results.append(article_object)
+    article_object= Articles(id, name, title, urlToImage, content, publishedAt)
+    articles_results.append(article_object)
 
     return articles_results
 
-    def get_article(id):
-        get_article_details_url = base2_url.format(api_key)
+# def get_article(id):
+#     get_article_details_url = base2_url.format(api_key)
 
-        with urllib.request.urlopen(get_article_details_url) as url:
-            article_details_data = url.read()
-            article_details_response = json.loads(article_details_data)
+#     with urllib.request.urlopen(get_article_details_url) as url:
+#         article_details_data = url.read()
+#         article_details_response = json.loads(article_details_data)
 
-            article_object = None
+#         article_object = None
 
-            if article_details_response:
-                id = article_details_response.get('id')
-                name = article_details_response.get('name')
-                title = article_details_response.get('title')
-                urlToImage = article_details_response.get('urlToImage')
-                content = article_details_response.get('content')
-                publishedAt = article_details_response.get('publishedAt')
+#         if article_details_response:
+#             id = article_details_response.get('id')
+#             name = article_details_response.get('name')
+#             title = article_details_response.get('title')
+#             urlToImage = article_details_response.get('urlToImage')
+#             content = article_details_response.get('content')
+#             publishedAt = article_details_response.get('publishedAt')
 
-                article_object = Articles(id,name,title,urlToImage,content,publishedAt)
+#             article_object = Articles(id,name,title,urlToImage,content,publishedAt)
 
-    return article_object
+#     return article_object
