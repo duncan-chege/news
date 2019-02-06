@@ -20,13 +20,12 @@
         <div class="col-sm-6">
             
             <div class="card card movecard">
-                    <img class="card-img-top imagesize img-rounded" src="{{indexarticle.urlToImage}}" alt="article image">
+                <img class="card-img-top imagesize img-rounded" src="{{indexarticle.urlToImage}}" alt="article image">
                     <div class="card-body">
                         <h4 class="card-title">{{indexarticle.title}}</h4>
                         <p>Published at {{indexarticle.publishedAt}}</p>
                         <p class="card-text">{{indexarticle.content | truncate(100) }}</p>
-                        <button class="btn" onclick="{{indexarticle.url}}">Read full story</button>
-                        <!-- <a href="{{indexarticle.url}}" class="btn btn-primary">Read full story</a> -->
+                        <a href="{{indexarticle.url}}"><button class="btn">Read full story</button></a> 
                     </div>
             </div>
         </div>
