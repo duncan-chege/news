@@ -13,7 +13,7 @@
 <div class="container move">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="artitle"> News Article </h2>
+            <h2 class="artitle"> News Articles </h2>
         </div>
 
     {% for indexarticle in myarticle %}
@@ -22,7 +22,8 @@
             <div class="card card movecard">
                     <img class="card-img-top imagesize img-rounded" src="{{indexarticle.urlToImage}}" alt="article image">
                     <div class="card-body">
-                        <h5 class="card-title">{{indexarticle.title}}</h5>
+                        <h4 class="card-title">{{indexarticle.title}}</h4>
+                        <p>Published at {{indexarticle.publishedAt}}</p>
                         <p class="card-text">{{indexarticle.content | truncate(100) }}</p>
                         <button class="btn" onclick="{{indexarticle.url}}">Read full story</button>
                         <!-- <a href="{{indexarticle.url}}" class="btn btn-primary">Read full story</a> -->

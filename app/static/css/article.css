@@ -7,10 +7,11 @@
 body{
     background-color: #101010;
     color: white;
+    font-family: 'Sarabun', sans-serif;
 }
 .imagesize{
     width: 70%;
-    height: 50%;
+    height: 0%;
 }
 .artitle{
     text-align: center;
@@ -24,11 +25,10 @@ body{
     margin: 30px;
 }
 .btn{
-
     background-color: #101010; 
     border: 2px solid #ffc47e;
     color: white;
-    padding: 16px 32px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     font-size: 12px;
@@ -36,6 +36,7 @@ body{
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 8px;
+    font-size: 13px;
 }
 .btn:hover {
     background-color: #ffc47e; 
