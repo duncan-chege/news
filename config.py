@@ -31,6 +31,7 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+    ENV = 'development'
 
 config_options = {
 'development':DevConfig,
